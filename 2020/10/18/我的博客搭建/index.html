@@ -17,7 +17,7 @@
 <meta property="og:description" content="准备​    先下载git和nodejs，git、nodejs. ​    注意，nodejs用msi下载，不要下载zip">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-18T08:09:54.000Z">
-<meta property="article:modified_time" content="2020-10-18T11:17:02.049Z">
+<meta property="article:modified_time" content="2020-10-22T10:54:52.000Z">
 <meta property="article:author" content="Beelake">
 <meta name="twitter:card" content="summary">
   
@@ -311,6 +311,7 @@ npm install</code></pre>
 <li>themes：主题</li>
 <li>_config.yml: 博客的配置文件</li>
 </ul>
+<p><code>cd进入myblog</code></p>
 <p>​    输入</p>
 <pre><code>hexo g
 hexo server</code></pre>
@@ -332,13 +333,13 @@ hexo server</code></pre>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
 <p>​    这一步，我们就可以将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开站点配置文件 <code>_config.yml</code>，翻到最后，修改为<br>YourgithubName就是你的GitHub账户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;YourgithubName&#x2F;YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">1234</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;YourgithubName&#x2F;YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
 <p>​    这个时候需要先安装deploy-git ，也就是部署的命令,这样你才能用命令部署到GitHub。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
 <p>​    然后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>​    其中 <code>hexo clean</code>清除了你之前生成的东西，也可以不加。<br>​    <code>hexo generate</code> 顾名思义，生成静态文章，可以用 <code>hexo g</code>缩写<br>​    <code>hexo deploy</code> 部署文章，可以用<code>hexo d</code>缩写</p>
 <p>​    注意deploy时可能要你输入username和password。</p>
@@ -354,7 +355,7 @@ hexo server</code></pre>
         <p><span>本文标题:</span><a  href="/2020/10/18/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">我的博客搭建</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问  的个人博客"></a></p>
         <p><span>发布时间:</span>2020年10月18日 - 16时09分</p>
-        <p><span>最后更新:</span>2020年10月18日 - 19时17分</p>
+        <p><span>最后更新:</span>2020年10月22日 - 18时54分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/10/18/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="我的博客搭建">http://example.com/2020/10/18/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</a>
             <span class="copy-path" data-clipboard-text="原文: http://example.com/2020/10/18/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/　　作者: " title=""></span>
@@ -365,6 +366,20 @@ hexo server</code></pre>
     </div>
 
 
+
+<nav id="article-nav">
+  
+    <a  href="/2020/10/18/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%20-%20%E5%89%AF%E6%9C%AC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          我的博客搭建
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
 
   
@@ -433,14 +448,16 @@ hexo server</code></pre>
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a  href="/2020/10/18/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%20-%20%E5%89%AF%E6%9C%AC/" title="上一篇: 我的博客搭建">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
             <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/10/18/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">我的博客搭建</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/10/18/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%20-%20%E5%89%AF%E6%9C%AC/">我的博客搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/18/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">我的博客搭建</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
