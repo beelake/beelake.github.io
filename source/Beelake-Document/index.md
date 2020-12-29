@@ -1,5 +1,5 @@
 ---
-title: '[doflake]document'
+title: '[Beelake]document'
 date: 2020-11-27 23:35:17
 ---
 
@@ -11,26 +11,25 @@ date: 2020-11-27 23:35:17
 
 ### 主题名
 
-&#8195;名称：$Doflake$
+&#8195;名称：$Beelake$
 
-&#8195;来源：$[元祖]Dove$与$[元祖]Beelake$ 名字合成 $(Dof~/~Lake)$
+&#8195;来源：$[元祖]Beelake$
 
 ### 开发人员
 
-1.  $[元祖]Dove~:$  主题相关内容 (文档 , 功能 , 样式 , 布局) 
-2.  $[元祖]Beelake~:$  部分文章 , 查询资料 , 找新功能
+&#8192;$[元祖]Beelake$
 
 ### 其他
 
 &#8195;- 感谢支持
 
-&#8195;- 如果有好的[提议](https://github.com/doflake/doflake.github.io/issues)，$Doflake$ 都会听的 😝
+&#8195;- 如果有好的[提议](https://github.com/beelake/beelake.github.io/issues)，$beelake$ 都会听的 😝
 
 ## 主题食用
 
 ### #$1$ $Download$ 下载
 
-&#8195;[点我下载合适的版本吧](https://github.com/doflake/Hexo-Theme-Doflake)
+&#8195;[点我下载合适的版本吧](https://github.com/beelake/Hexo-Theme-beelake)
 
 ### #$2$ $Basic Settings$ 基础设置
 

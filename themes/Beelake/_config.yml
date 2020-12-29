@@ -38,7 +38,7 @@ basic:
   info:
    title: Beelake
    favicon: https://cdn.jsdelivr.net/gh/doflake/Picture/Favicon/1.jpg
-   author: Doflake
+   author: Beelake
 
 ## Menu 导航栏
 # **************************|*********************************
@@ -51,15 +51,12 @@ basic:
    Home: 
      name: 主页
      link: /
-   Document:
-     name: 主题文档
-     link: /doflake-document/
    Archives:
      name: 归档
      link: /archives/
    Github: 
      name: Github
-     link: https://github.com/doflake/
+     link: https://github.com/Beelake/
    FunnyBaidu:
      name: 度娘
      link: /Funny-Baidu

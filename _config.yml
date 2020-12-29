@@ -98,7 +98,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: doflake
+theme: Beelake
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -106,3 +106,5 @@ deploy:
   type: git
   repo: https://github.com/beelake/beelake.github.io.git
   branch: master
+
+
