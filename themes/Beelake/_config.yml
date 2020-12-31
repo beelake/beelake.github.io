@@ -1,6 +1,6 @@
 Info: 
   Title: Beelake
-  // Favicon: https://cdn.jsdelivr.net/gh/doflake/Picture/Favicon/1.jpg
+  Favicon: https://cdn.jsdelivr.net/gh/doflake/Picture/Favicon/1.jpg
   Author: Beelake
 
 Menu:
@@ -10,9 +10,12 @@ Menu:
   Archives: 
     Name: 归档
     Link: /archives
+  Document:
+    Name: 主题文档
+    Link: /Beelake-Document
   Hexo: 
     Name: Hexo专题
-    Link：/Hexo
+    Link: /Hexo
   Github: 
     Name: Github
     Link: https://github.com/beelake/Theme-Beelake
@@ -26,3 +29,6 @@ Background:
     Repeat: no-repeat
     Attachment: fixed
     Size: 100% 100%
+
+Mathjax: 
+  enable: true;
