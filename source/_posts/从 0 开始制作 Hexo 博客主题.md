@@ -5,6 +5,8 @@ link_c: Hexo
 link_name: Theme-Made-By-Myself
 top: 2002
 mathjax: true
+tags: Hexo
+categories: Hexo
 ---
 
 ## 写在前面
@@ -54,7 +56,7 @@ theme: theme-example
 `hexo server --debug` 以 `debug` 模式开启 `Hexo` 本地服务器预览，访问 http://localhost:4000/。
 
 ![](http://ww2.sinaimg.cn/large/006tNc79gw1farp8irho3j30dq058t8s.jpg)
- 
+
 ## 写作
 在工作文件夹中执行这条命令来新建一篇文章，`title`即为文章的标题。
 ```
@@ -63,7 +65,7 @@ hexo new <title>　　
 终端会返回一条信息，告诉你文章源文件存放在哪里：
 
 ![](https://img2018.cnblogs.com/blog/826333/201906/826333-20190604095056843-1809346942.png)
- 
+
 ## 添加页面导航
 现在我们需要在页面中添加导航，由于导航不单单会在首页出现，所以我们在 `layout` 中创建共用的布局文件 `layout.ejs`， 同时创建 `_partial/head.ejs` 保存 HTML 的 `head` 以及创建 `_partial/header.ejs` 文件，编写页面导航部分。
 `layout/layout.ejs:`

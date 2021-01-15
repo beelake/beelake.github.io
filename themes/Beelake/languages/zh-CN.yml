@@ -1,3 +1,7 @@
 Paginator:
   Prev: 上一页
   Next: 下一页
+Post:
+  copy_button: 复制
+  copy_success: 复制成功
+  copy_failure: 复制失败

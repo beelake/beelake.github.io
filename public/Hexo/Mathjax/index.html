@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/beelake/Picture/favicon/2.jpg">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+
+    
+    
+    <title>
+        
+            hexo 主题 添加 mathjax | Beelake
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Beelake</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="请输入关键字"><input type="hidden" name="sitesearch" value="http://beelake.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tag"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+                
+                <a href="/ss/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-twitch"></i>
+                    </div>
+                    <div class="mdui-list-item-content">留言板</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/beelake/Picture/favicon/2.jpg"/>
+                
+            </div>
+            <div class="sidebar-author-name">Beelake</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:beelake@163.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://github.com/beelake" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-qq"></i></span>
+                    <a target="_blank" rel="noopener" href="https://jq.qq.com/?_wv=1027&k=egdI1aWp" class="mdui-chip-title">QQ</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://doflake.github.io" class="mdui-list-item mdui-ripple">
+                            Doflake
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://luogu.com.cn" class="mdui-list-item mdui-ripple">
+                            Luogu
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="http://120.27.222.204:12243/" class="mdui-list-item mdui-ripple">
+                            Stupid OJ
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="http://www.zhimaoi.cn/" class="mdui-list-item mdui-ripple">
+                            ZMOI
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="http://www.usaco.org/" class="mdui-list-item mdui-ripple">
+                            USACO
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://codeforces.com/" class="mdui-list-item mdui-ripple">
+                            Codeforces官网
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://codeforces.ml/" class="mdui-list-item mdui-ripple">
+                            Codeforces镜像站
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://oi-wiki.org/" class="mdui-list-item mdui-ripple">
+                            Oi-Wiki
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://www.wolframalpha.com/" class="mdui-list-item mdui-ripple">
+                            WolframAlpha
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="http://oeis.org/" class="mdui-list-item mdui-ripple">
+                            Oeis(推式子)
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://wallhaven.cc/" class="mdui-list-item mdui-ripple">
+                            Wallhaven
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://csacademy.com/app/graph_editor/" class="mdui-list-item mdui-ripple">
+                            图论工具
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/Hexo/Mathjax/">hexo 主题 添加 mathjax</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-01-02
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-01-14
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/Hexo/">Hexo</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=hexo 主题 添加 mathjax&url=http://beelake.github.io/Hexo/Mathjax/&pic=http://beelake.github.iohttps://cdn.jsdelivr.net/gh/beelake/Picture/favicon/2.jpg&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=hexo 主题 添加 mathjax&url=http://beelake.github.io/Hexo/Mathjax/&via=Beelake" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://beelake.github.io/Hexo/Mathjax/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://beelake.github.io/Hexo/Mathjax/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://beelake.github.io/Hexo/Mathjax/&title=hexo 主题 添加 mathjax" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Beelake&title=hexo 主题 添加 mathjax&summary=&pics=http://beelake.github.iohttps://cdn.jsdelivr.net/gh/beelake/Picture/favicon/2.jpg&url=http://beelake.github.io/Hexo/Mathjax/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://beelake.github.io/Hexo/Mathjax/&text=hexo 主题 添加 mathjax" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/Hexo/ >Hexo</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <p>$hexo$自带的$markdown$不支持$mathjax$,因此我们要添加$mathjax$</p>
+<a id="more"></a>
+
+<p>首先，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">npm uninstall hexo-renderer-marked<br></code></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">hexo install hexo-renderer-markdown-it<br>npm install hexo-renderer-kramed --save<br></code></pre></td></tr></table></figure>
+
+<p>最后，新建$layout/$_$markdown/mathjax.ejs:$</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs ejs">&lt;script&gt;<br>    if (typeof MathJax &#x3D;&#x3D;&#x3D; &#39;undefined&#39;) &#123;<br>      window.MathJax &#x3D; &#123;<br>        loader: &#123;<br>          source: &#123;<br>            &#39;[tex]&#x2F;amsCd&#39;: &#39;[tex]&#x2F;amscd&#39;,<br>            &#39;[tex]&#x2F;AMScd&#39;: &#39;[tex]&#x2F;amscd&#39;<br>          &#125;<br>        &#125;,<br>        tex: &#123;<br>          inlineMath: &#123;&#39;[+]&#39;: [[&#39;$&#39;, &#39;$&#39;]]&#125;,<br>          tags: &#39;ams&#39;<br>        &#125;,<br>        options: &#123;<br>          renderActions: &#123;<br>            findScript: [10, doc &#x3D;&gt; &#123;<br>              document.querySelectorAll(&#39;script[type^&#x3D;&quot;math&#x2F;tex&quot;]&#39;).forEach(node &#x3D;&gt; &#123;<br>                const display &#x3D; !!node.type.match(&#x2F;; *mode&#x3D;display&#x2F;);<br>                const math &#x3D; new doc.options.MathItem(node.textContent, doc.inputJax[0], display);<br>                const text &#x3D; document.createTextNode(&#39;&#39;);<br>                node.parentNode.replaceChild(text, node);<br>                math.start &#x3D; &#123;node: text, delim: &#39;&#39;, n: 0&#125;;<br>                math.end &#x3D; &#123;node: text, delim: &#39;&#39;, n: 0&#125;;<br>                doc.math.push(math);<br>              &#125;);<br>            &#125;, &#39;&#39;, false],<br>            insertedScript: [200, () &#x3D;&gt; &#123;<br>              document.querySelectorAll(&#39;mjx-container&#39;).forEach(node &#x3D;&gt; &#123;<br>                let target &#x3D; node.parentNode;<br>                if (target.nodeName.toLowerCase() &#x3D;&#x3D;&#x3D; &#39;li&#39;) &#123;<br>                  target.parentNode.classList.add(&#39;has-jax&#39;);<br>                &#125;<br>              &#125;);<br>            &#125;, &#39;&#39;, false]<br>          &#125;<br>        &#125;<br>      &#125;;<br>      (function () &#123;<br>        var script &#x3D; document.createElement(&#39;script&#39;);<br>        script.src &#x3D; &#39;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;mathjax@3.0&#x2F;es5&#x2F;tex-mml-chtml.js&#39;;<br>        script.defer &#x3D; true;<br>        document.head.appendChild(script);<br>      &#125;)();<br>    &#125; else &#123;<br>      MathJax.startup.document.state(0);<br>      MathJax.texReset();<br>      MathJax.typeset();<br>    &#125;<br>  &lt;&#x2F;script&gt;<br></code></pre></td></tr></table></figure>
+
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/Game/Cats-Country/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>猫国建设者外挂</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/Hexo/Theme-Made-By-Myself/">
+        <span>从 0 开始制作 Hexo 博客主题</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/Hexo/Mathjax/" id="toc-header" class="mdui-ripple">文章目录</a>
+        
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '1a1eac78b9ae72feb6d5',
+    clientSecret: '21d4f9f925e4d4c7107bf9a081b3b15388211518',
+    repo: 'beelake.github.io',
+    owner: 'beelake',
+    admin: ['beelake'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        Beelake
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/beelake/Picture/favicon/2.jpg">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+
+    
+    
+    <title>
+        
+            洛谷 P2295-MICE | Beelake
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Beelake</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="请输入关键字"><input type="hidden" name="sitesearch" value="http://beelake.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tag"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+                
+                <a href="/ss/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-twitch"></i>
+                    </div>
+                    <div class="mdui-list-item-content">留言板</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/beelake/Picture/favicon/2.jpg"/>
+                
+            </div>
+            <div class="sidebar-author-name">Beelake</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:beelake@163.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://github.com/beelake" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-qq"></i></span>
+                    <a target="_blank" rel="noopener" href="https://jq.qq.com/?_wv=1027&k=egdI1aWp" class="mdui-chip-title">QQ</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://doflake.github.io" class="mdui-list-item mdui-ripple">
+                            Doflake
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://luogu.com.cn" class="mdui-list-item mdui-ripple">
+                            Luogu
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="http://120.27.222.204:12243/" class="mdui-list-item mdui-ripple">
+                            Stupid OJ
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="http://www.zhimaoi.cn/" class="mdui-list-item mdui-ripple">
+                            ZMOI
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="http://www.usaco.org/" class="mdui-list-item mdui-ripple">
+                            USACO
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://codeforces.com/" class="mdui-list-item mdui-ripple">
+                            Codeforces官网
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://codeforces.ml/" class="mdui-list-item mdui-ripple">
+                            Codeforces镜像站
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://oi-wiki.org/" class="mdui-list-item mdui-ripple">
+                            Oi-Wiki
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://www.wolframalpha.com/" class="mdui-list-item mdui-ripple">
+                            WolframAlpha
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="http://oeis.org/" class="mdui-list-item mdui-ripple">
+                            Oeis(推式子)
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://wallhaven.cc/" class="mdui-list-item mdui-ripple">
+                            Wallhaven
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://csacademy.com/app/graph_editor/" class="mdui-list-item mdui-ripple">
+                            图论工具
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/Explanation/Luogu-P2295-Mice/">洛谷 P2295-MICE</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2020-10-23
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-01-14
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/C/">C++</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=洛谷 P2295-MICE&url=http://beelake.github.io/Explanation/Luogu-P2295-Mice/&pic=http://beelake.github.iohttps://cdn.jsdelivr.net/gh/beelake/Picture/favicon/2.jpg&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=洛谷 P2295-MICE&url=http://beelake.github.io/Explanation/Luogu-P2295-Mice/&via=Beelake" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://beelake.github.io/Explanation/Luogu-P2295-Mice/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://beelake.github.io/Explanation/Luogu-P2295-Mice/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://beelake.github.io/Explanation/Luogu-P2295-Mice/&title=洛谷 P2295-MICE" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Beelake&title=洛谷 P2295-MICE&summary=&pics=http://beelake.github.iohttps://cdn.jsdelivr.net/gh/beelake/Picture/favicon/2.jpg&url=http://beelake.github.io/Explanation/Luogu-P2295-Mice/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://beelake.github.io/Explanation/Luogu-P2295-Mice/&text=洛谷 P2295-MICE" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/Luogu/ >Luogu</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>一个矩阵，每个元素均为0或1，要求从左上角到右下角的路径中，走过的格子和上下左右四个格子的1最少，输出1的个数（只能向下或右走）</p>
+<a id="more"></a>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>&#8195;从左上角到右下角的最少一的个数，这明显是一个DP题，那就应该推导DP转移方程了，首先，一个点应该有两种情况，从左边来或从上边来，因此数组应有1维是方向，而剩下还要两维是这个点的位置。</p>
+<p>&#8195;但是预处理也是有点门道的，我在开始预处理的时候想的是在当前点上下左右的都加起来，但是写完以后发现答案要大好多，仔细分析一下，我们可以发现几个特点：</p>
+<p>&#8195;1、当前点由左边或上边转移而来，所以左边或上边已经能够看到当前点的左边和上边的点，所以只需要预处理该点下和右边的数量。</p>
+<p>&#8195;2、当前点是从左或上转移而来，如果上边的点仍然从上边转移来，那么该点的左边一定是没有统计过的，而从左边转移来的点上一次转移还是左边也是一样的，该点上边的点一定没有统计，所以我们就需要第三维来记录从左还是上转移而来。数组也就变成了 $f[i][j][1]$，和 $f[i][j][0]$，分别表示从左边来还是从右边来。如果一直从左转移，那么需要加上上边的害怕值，从上同理.<br>那么我们这样就得到了状态转移方程和预处理。预处理<code>val[i][j]</code>数组表示第<code>i</code>行<code>j</code>列会得到的害怕值，根据上边的分析得到只需要看这个点右边和下边即可。</p>
+<p>&#8195;$f_{i,j,0/1}$ i，j是位置，0指左，1指右</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;=n;i++)<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;=m;j++)<br>		v[i][j]+=a[i][j+<span class="hljs-number">1</span>]+a[i+<span class="hljs-number">1</span>][j];<span class="hljs-comment">//记录当前点右边和下边的1的个数</span><br><span class="hljs-built_in">memset</span>(f,<span class="hljs-number">0x3f</span>,<span class="hljs-keyword">sizeof</span>(f));<br>f[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]=f[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]=v[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]; <br>f[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]=f[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]=v[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>];<br>f[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]=f[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]=<span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+
+<h3 id="状态转移"><a href="#状态转移" class="headerlink" title="状态转移"></a>状态转移</h3><ul>
+<li><p>从左边来：<code>f[i][j][0]=min(f[i][j-1][0]+v[i][j]+a[i-1][j],f[i][j-1][1]+v[i][j]);</code></p>
+</li>
+<li><p>从右边来：<code>f[i][j][1]=min(f[i-1][j][1]+v[i][j]+a[i][j-1],f[i-1][j][0]+v[i][j]);</code></p>
+</li>
+</ul>
+<h3 id="总代码"><a href="#总代码" class="headerlink" title="总代码"></a>总代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;cstdio&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">int</span> n,m,v[<span class="hljs-number">1010</span>][<span class="hljs-number">1010</span>],f[<span class="hljs-number">1010</span>][<span class="hljs-number">1010</span>][<span class="hljs-number">2</span>];<br><span class="hljs-keyword">int</span> a[<span class="hljs-number">1010</span>][<span class="hljs-number">1010</span>];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=m;j++)<br>			<span class="hljs-built_in">cin</span>&gt;&gt;a[i][j];<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;=n;i++)<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;=m;j++)<br>			v[i][j]+=a[i][j+<span class="hljs-number">1</span>]+a[i+<span class="hljs-number">1</span>][j];<br>	<span class="hljs-built_in">memset</span>(f,<span class="hljs-number">0x3f</span>,<span class="hljs-keyword">sizeof</span>(f));<br>	f[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]=f[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]=v[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]; <br>	f[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]=f[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]=v[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>];<br>	f[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]=f[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)<br>	&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=m;j++)<br>		&#123;<br>			f[i][j][<span class="hljs-number">0</span>]=min(f[i][j<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>]+v[i][j]+a[i<span class="hljs-number">-1</span>][j],f[i][j<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]+v[i][j]);<br>			f[i][j][<span class="hljs-number">1</span>]=min(f[i<span class="hljs-number">-1</span>][j][<span class="hljs-number">1</span>]+v[i][j]+a[i][j<span class="hljs-number">-1</span>],f[i<span class="hljs-number">-1</span>][j][<span class="hljs-number">0</span>]+v[i][j]);<br>			<span class="hljs-comment">//cout&lt;&lt;f[i][j][0]&lt;&lt;&#x27; &#x27;&lt;&lt;f[i][j][1]&lt;&lt;&quot; * &quot;;</span><br>		&#125;<br>		<span class="hljs-comment">//cout&lt;&lt;endl;</span><br>	&#125;<br>	<span class="hljs-built_in">cout</span>&lt;&lt;min(f[n][m][<span class="hljs-number">0</span>],f[n][m][<span class="hljs-number">1</span>]);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/Hexo/Theme-Made-By-Myself/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>从 0 开始制作 Hexo 博客主题</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/Hexo/Hexo+GitHub-Blog-Building/">
+        <span>hexo+github博客搭建</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/Explanation/Luogu-P2295-Mice/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F"><span class="toc-number">1.</span> <span class="toc-text">题目大意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.1.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB"><span class="toc-number">2.2.</span> <span class="toc-text">状态转移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E4%BB%A3%E7%A0%81"><span class="toc-number">2.3.</span> <span class="toc-text">总代码</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '1a1eac78b9ae72feb6d5',
+    clientSecret: '21d4f9f925e4d4c7107bf9a081b3b15388211518',
+    repo: 'beelake.github.io',
+    owner: 'beelake',
+    admin: ['beelake'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        Beelake
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >

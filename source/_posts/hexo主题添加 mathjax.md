@@ -5,6 +5,8 @@ date: 2021-01-02 17:16:47
 link_c: Hexo
 link_name: Mathjax
 top: 2001
+tags: Hexo
+categories: Hexo
 ---
 
 $hexo$自带的$markdown$不支持$mathjax$,因此我们要添加$mathjax$
