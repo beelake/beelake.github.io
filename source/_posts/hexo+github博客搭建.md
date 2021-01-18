@@ -14,7 +14,7 @@ categories: Hexo
 
 ## 准备
 
-先下载`git`和`nodejs`，[git](https://git-scm.com/downloads)、[nodejs](https://nodejs.org/en/download/).
+先下载`git`和`nodejs`，[git](https://git-scm.com/downloads)、[nodejs](https://nodejs.org/en/download/). 
 
 注意，`nodejs`用`msi`下载，不要下载`zip`
 

@@ -82,5 +82,5 @@ int main()
 	}
 	cout<<min(f[n][m][0],f[n][m][1]);
 	return 0;
-}
+} 
 ```

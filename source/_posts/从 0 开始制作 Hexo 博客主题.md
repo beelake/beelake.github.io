@@ -31,7 +31,7 @@ categories: Hexo
 ## 创建布局模板
 在 `layout` 中创建 `index.ejs` 文件，首页将会使用该布局模板生成 HTML 文件。
 `layout/index.ejs:`
-```js
+```ejs
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -69,7 +69,7 @@ hexo new <title>　　
 ## 添加页面导航
 现在我们需要在页面中添加导航，由于导航不单单会在首页出现，所以我们在 `layout` 中创建共用的布局文件 `layout.ejs`， 同时创建 `_partial/head.ejs` 保存 HTML 的 `head` 以及创建 `_partial/header.ejs` 文件，编写页面导航部分。
 `layout/layout.ejs:`
-```js
+```ejs
 <!DOCTYPE html>
 <html>
   <%- partial('_partial/head') %>
@@ -83,7 +83,7 @@ hexo new <title>　　
 ```
 `layout.ejs` 文件通过 `partial()` 函数来包含其他文件，使得我们能够更好的组织代码。详见 `Templates | Hexo`。
 `layout/_partial/head.ejs:`
-```js
+```ejs
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
@@ -92,7 +92,7 @@ hexo new <title>　　
 ```
 这里使用了 `config` 变量，该变量包含的是站点配置（即站点根目录下 `_config.yml` 中的配置）。除此之外，`Hexo` 还提供了许多变量可在模板中使用，详见 `Variables | Hexo`。
 `layout/_partial/header.ejs:`
-```js
+```ejs
 <header class="header">
   <div class="blog-title">
     <a href="<%- url_for() %>" class="logo"><%= config.title %></a>
@@ -122,7 +122,7 @@ menu:
   Archives: /archives
 ```
 这样我们就可以在 `header.ejs` 中使用 `theme.menu` 获取到导航菜单的设置。将 `header.ejs` 修改为：
-```js
+```ejs
 <header class="header">
   <div class="blog-title">
     <a href="<%- url_for() %>" class="logo"><%= config.title %></a>
@@ -149,7 +149,7 @@ menu:
 ## 添加首页文章列表
 接着我们完善首页的模板，使其能够显示文章列表。前面已经说过 `Hexo` 提供了各种有用的变量，在这里将会使用到 `page` 这个变量。`page` 会根据不同的页面拥有不同的属性。具体有什么属性，可以获取到哪些数据可以查看[这里](https://hexo.io/docs/variables.html#Page-Variables)。
 那么这里我们会使用 `page` 变量的 `posts` 属性拿到文章数据的集合。编辑 `index.ejs` 文件：
-```js
+```ejs
 <section class="posts">
   <% page.posts.each(function (post) { %>
     <article class="post">
@@ -170,7 +170,7 @@ menu:
 ## 文章摘录
 由于首页显示文章内容时使用的是 `post.content`，即文章的全部内容。所以首页会显示每一篇文章的内容，实际上我们并不想在首页显示那么多内容，只想显示文章的摘录。
 `Hexo` 提供了 `excerpt` 属性来获取文章的摘录部分，不过这里需要在文章中添加一个 `<!-- more -->` 标记。添加了这个标记之后，`post.excerpt` 将会获取到标记之前的内容。如果没有这个标记，那么 `post.excerpt` 会是空的。所以我们可以把首页文章内容部分的 `post.content` 替换成 `post.excerpt`。
-```js
+```ejs
 <div class="post-content">
   <%- post.excerpt %>
 </div>
@@ -268,7 +268,7 @@ body {
 ```
 最后，我们需要把样式添加到页面中，这里使用了另外一个辅助函数 `css():`
 `layout/_partial/head.ejs:`
-```js
+```ejs
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
@@ -284,7 +284,7 @@ body {
 在站点的 `source/_post/` 目录下存放的是我们的文章，现在我们把原本的 `hello-world.md` 复制黏贴 `10+` 次，再查看站点首页。会发现，首页只显示了 `10` 篇文章。
 首页显示的文章数量我们可以通过站点配置文件中的 `per_page` 字段来修改，但是我们不可能把所有文章都放在一页，所以我们现在来添加文章列表的分页。
 新建 `_partial/paginator.ejs:`
-```js
+```ejs
 <% if (page.total > 1){ %>
   <nav class="page-nav">
     <%- paginator({
@@ -303,7 +303,7 @@ body {
 这里我们使用到了另外的一个辅助函数 `paginator`，它能够帮助我们插入分页链接。
 添加文章详情页
 文章详情页对应的布局文件是 `post.ejs`，新建 `post.ejs:`
-```js
+```ejs
 <article class="post">
   <div class="post-title">
     <h2 class="title"><%= page.title %></h2>
@@ -319,7 +319,7 @@ body {
 由于这里是文章的模板，所以变量 `page` 表示的是文章的数据，而不是首页的文章数据集合。
 ## 添加归档页
 创建归档页使用的模板文件 `archive.ejs:`
-```js
+```ejs
 <section class="archive">
   <ul class="post-archive">
     <% page.posts.each(function (post) { %>
@@ -378,7 +378,7 @@ Paginator:
 ```
 目前我们需要主题根据选择的语言自动修改的有上面这些，接着我们需要修改 `header.ejs` 与 `paginator.ejs` 这两个文件：
 `_partial/header.ejs`
-```js
+```ejs
 <header class="header">
   <div class="blog-title">
     <a href="<%- url_for() %>" class="logo"><%= config.title %></a>
@@ -395,7 +395,7 @@ Paginator:
 </header>
 ```
 `_partial/paginator.ejs:`
-```js
+```ejs
 <% if (page.total > 1){ %>
   <nav class="page-nav">
     <%- paginator({
@@ -419,7 +419,7 @@ Paginator:
 ```
 然后我们将站点配置文件中的 `language` 字段修改为 `zh-CN`（与 `zh-CN.yml` 文件名相同）。再次访问站点之后就会发现导航与分页部分的文字变成了中文。
 ## hexo函数
-```js
+```ejs
 <%- __('Menu.' + name) %>
 ```
 __下划线函数在 `hexo` 变量 可以查看 `Lodash` 函数，专门用于`json`取值

@@ -20,7 +20,7 @@ npm uninstall hexo-renderer-marked
 
 然后
 ```
-hexo install hexo-renderer-markdown-it
+npm install hexo-renderer-markdown-it
 npm install hexo-renderer-kramed --save
 ```
 

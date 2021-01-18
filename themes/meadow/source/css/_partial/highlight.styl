@@ -1,16 +1,16 @@
 // https://github.com/chriskempson/tomorrow-theme
-highlight-background = #2d2d2d
-highlight-current-line = #393939
-highlight-selection = #515151
-highlight-foreground = #cccccc
-highlight-comment = #999999
-highlight-red = #f2777a
-highlight-orange = #f99157
-highlight-yellow = #ffcc66
-highlight-green = #99cc99
-highlight-aqua = #66cccc
-highlight-blue = #6699cc
-highlight-purple = #cc99cc
+hljs-background = #2d2d2d
+hljs-current-line = #393939
+hljs-selection = #515151
+hljs-foreground = #cccccc
+hljs-comment = #999999
+hljs-red = #f2777a
+hljs-orange = #f99157
+hljs-yellow = #ffcc66
+hljs-green = #99cc99
+hljs-aqua = #66cccc
+hljs-blue = #6699cc
+hljs-purple = #cc99cc
 
 //变量
 article-padding = 20px
@@ -19,14 +19,14 @@ line-height = 1.6em
 font-mono = "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace
 
 $code-block
-  background: highlight-background
+  background: hljs-background
   margin: 0 article-padding * -1
   padding: 15px article-padding
   border-style: solid
   border-color: color-border
   border-width: 1px 0
   overflow: auto
-  color: highlight-foreground
+  color: hljs-foreground
   line-height: font-size * line-height
 
 $line-numbers
@@ -47,7 +47,7 @@ pre
     text-shadow: none
     padding: 0
     
-.highlight
+.hljs
   @extend $code-block
   pre
     border: none
@@ -62,7 +62,7 @@ pre
   figcaption
     clearfix()
     font-size: 0.85em
-    color: highlight-comment
+    color: hljs-comment
     line-height: 1em
     margin-bottom: 1em
     a
@@ -74,13 +74,13 @@ pre
   .line
     height: font-size * line-height
   .line.marked
-    background: highlight-selection
+    background: hljs-selection
 .gist
   margin: 0 article-padding * -1
   border-style: solid
   border-color: color-border
   border-width: 1px 0
-  background: highlight-background
+  background: hljs-background
   padding: 15px article-padding 15px 0
   .gist-file
     border: none
@@ -96,13 +96,13 @@ pre
         padding: 0 20px 0 0
       .line-data
         padding: 0 !important
-    .highlight
+    .hljs
       margin: 0
       padding: 0
       border: none
     .gist-meta
-      background: highlight-background
-      color: highlight-comment
+      background: hljs-background
+      color: hljs-comment
       font: 0.85em font-sans
       text-shadow: 0 0
       padding: 0
@@ -117,7 +117,7 @@ pre
 pre
   .comment
   .title
-    color: highlight-comment
+    color: hljs-comment
   .variable
   .attribute
   .tag
@@ -130,27 +130,27 @@ pre
   .css .id
   .css .class
   .css .pseudo
-    color: highlight-red
+    color: hljs-red
   .number
   .preprocessor
   .built_in
   .literal
   .params
   .constant
-    color: highlight-orange
+    color: hljs-orange
   .class
   .ruby .class .title
   .css .rules .attribute
-    color: highlight-green
+    color: hljs-green
   .string
   .value
   .inheritance
   .header
   .ruby .symbol
   .xml .cdata
-    color: highlight-green
+    color: hljs-green
   .css .hexcolor
-    color: highlight-aqua
+    color: hljs-aqua
   .function
   .python .decorator
   .python .title
@@ -159,12 +159,12 @@ pre
   .perl .sub
   .javascript .title
   .coffeescript .title
-    color: highlight-blue
+    color: hljs-blue
   .keyword
   .javascript .function
-    color: highlight-purple
+    color: hljs-purple
 
 //修复mdui1.0.0导致的代码块居中
-figure, .highlight {
+figure, .hljs {
   text-align: unset !important;
 }
