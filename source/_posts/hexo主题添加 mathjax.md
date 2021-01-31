@@ -7,6 +7,8 @@ link_name: Mathjax
 top: 2001
 tags: Hexo
 categories: Hexo
+top_img: https://cdn.jsdelivr.net/gh/beelake/Picture/background/2.jpg
+cover: https://cdn.jsdelivr.net/gh/beelake/Picture/background/2.jpg
 ---
 
 $hexo$自带的$markdown$不支持$mathjax$,因此我们要添加$mathjax$

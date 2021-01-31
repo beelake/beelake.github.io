@@ -7,6 +7,8 @@ top: 1001
 mathjax: true
 tags: Luogu
 categories: C++
+top_img: https://cdn.jsdelivr.net/gh/beelake/Picture/background/2.jpg
+cover: https://cdn.jsdelivr.net/gh/beelake/Picture/background/2.jpg
 ---
 
 

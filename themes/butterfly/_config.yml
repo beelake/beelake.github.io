@@ -18,6 +18,7 @@ menu:
   友链: /link ||fas fa-link
   留言板: /comment || fas fa-comment
   关于: /about/ || fas fa-heart
+  开往: https://travellings.now.sh/ || fas fa-train
 
 # Hide the child menu items in mobile sidebar
 hide_sidebar_menu_child: false
@@ -25,10 +26,10 @@ hide_sidebar_menu_child: false
 # Code Blocks (代碼相關)
 # --------------------------------------
 
-highlight_theme: darker #  darker / pale night / light / ocean / mac / mac light / false
+highlight_theme: mac #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
-highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
+highlight_shrink: true # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
 code_word_wrap: false
 
 # copy settings
@@ -92,31 +93,31 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page
-index_img:
+index_img: https://cdn.jsdelivr.net/gh/beelake/Picture/background/1.png
 
 # If the banner of page not setting, it will show the top_img
-default_top_img:
+default_top_img: https://cdn.jsdelivr.net/gh/beelake/Picture/background/2.jpg
 
 # The banner image of archive page
-archive_img:
+archive_img: https://cdn.jsdelivr.net/gh/beelake/Picture/background/2.jpg
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img:
+tag_img: https://cdn.jsdelivr.net/gh/beelake/Picture/background/2.jpg
 
 # The banner image of tag page
 # format:
 #  - tag name: xxxxx
-tag_per_img:
+tag_per_img: https://cdn.jsdelivr.net/gh/beelake/Picture/background/2.jpg
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img:
+category_img: https://cdn.jsdelivr.net/gh/beelake/Picture/background/2.jpg
 
 # The banner image of category page
 # format:
 #  - category name: xxxxx
-category_per_img:
+category_per_img: https://cdn.jsdelivr.net/gh/beelake/Picture/background/2.jpg
 
 cover:
   # display the cover or not (是否顯示文章封面)
@@ -137,7 +138,7 @@ error_img:
 
 # A simple 404 page
 error_404:
-  enable: false
+  enable: true
   subtitle: 'Page Not Found'
   background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
 
@@ -300,7 +301,7 @@ gitalk:
   client_secret: 21d4f9f925e4d4c7107bf9a081b3b15388211518
   repo: beelake.github.io
   owner: beelake
-  admin:
+  admin: beelake
   language: zh-CN # en, zh-CN, zh-TW, es-ES, fr, ru
   perPage: 10 # Pagination size, with maximum 100.
   distractionFreeMode: false # Facebook-like distraction free mode.
@@ -513,7 +514,7 @@ tag_ui: # 留空或 index
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: https://cdn.jsdelivr.net/gh/beelake/Picture/Background/2.jpg
+background: url(https://cdn.jsdelivr.net/gh/beelake/Picture/background/4.png)
 
 # Footer Background
 footer_bg: false
@@ -545,8 +546,8 @@ canvas_fluttering_ribbon:
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: false
-  color: '0,0,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  enable: true
+  color: '100,100,100' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   opacity: 0.7 # the opacity of line (0~1), default: 0.5.
   zIndex: -1 # z-index property of the background, default: -1.
   count: 99 # the number of lines, default: 99.
@@ -555,16 +556,16 @@ canvas_nest:
 # Typewriter Effect (打字效果)
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-  enable: false
+  enable: true
   colorful: true # open particle animation (冒光特效)
   shake: true #  open shake (抖動特效)
   mobile: false
 
 # Mouse click effects: fireworks (鼠標點擊效果: 煙火特效)
 fireworks:
-  enable: false
+  enable: true
   zIndex: 9999 # -1 or 9999
-  mobile: false
+  mobile: true
 
 # Mouse click effects: Heart symbol (鼠標點擊效果: 愛心)
 click_heart:
@@ -573,14 +574,14 @@ click_heart:
 
 # Mouse click effects: words (鼠標點擊效果: 文字)
 ClickShowText:
-  enable: true
+  enable: false
   text:
     - GYZ
     - LOVE
     - MXY
   fontSize: 15px
   random: false
-  mobile: true
+  mobile: false
 
 # Default display mode (網站默認的顯示模式)
 # light (default) / dark
@@ -609,13 +610,13 @@ blog_title_font:
 
 # The setting of divider icon (水平分隔線圖標設置)
 hr_icon:
-  enable: true
+  enable: false
   icon: # the unicode value of Font Awesome icon, such as '\3423'
   icon-top:
 
 # the subtitle on homepage (主頁subtitle)
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect (打字效果)
   effect: true
   # loop (循環打字)
@@ -627,7 +628,7 @@ subtitle:
   # source: 3  調用一句網（簡體） http://yijuzhan.com/
   # source: 4  調用今日詩詞（簡體） https://www.jinrishici.com/
   # subtitle 會先顯示 source , 再顯示 sub 的內容
-  source: false
+  source: 1
   # 如果有英文逗號' , ',請使用轉義字元 &#44;
   # 如果有英文雙引號' " ',請使用轉義字元 &quot;
   # 開頭不允許轉義字元，如需要，請把整個句子用雙引號包住
@@ -635,7 +636,7 @@ subtitle:
   sub:
 
 # Loading Animation (加載動畫)
-preloader: false
+preloader: true
 
 # aside (側邊欄)
 # --------------------------------------
